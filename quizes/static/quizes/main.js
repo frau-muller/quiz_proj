@@ -1,5 +1,5 @@
 
-console.log('hello world')
+console.log('hello ')
 
 const modalBtns = [...document.getElementsByClassName('modal-button')]
 const modalBody = document.getElementById('modal-body-confirm')

@@ -39,7 +39,7 @@ const activateTimer = (time) => {
             timerBox.innerHTML = "<b>00:00</b>"
             setTimeout(()=>{
                 clearInterval(timer)
-                alert('Time over')
+                alert('Час выйшаў')
                 sendData()
             }, 500)
         }
@@ -105,7 +105,7 @@ const sendData = () => {
             console.log(results)
             quizForm.classList.add('not-visible')
 
-            scoreBox.innerHTML = `${response.passed ? 'Congratulations! ' : 'Ups..:( '}Your result is ${response.score.toFixed(2)}%`
+            scoreBox.innerHTML = `${response.passed ? 'Вiншуем! ' : 'Опачкi..:( '}Ваш вынiк ${response.score.toFixed(2)}%`
 
             results.forEach(res=>{
                 const resDiv = document.createElement("div")
@@ -116,7 +116,7 @@ const sendData = () => {
                     resDiv.classList.add(...cls)
 
                     if (resp=='not answered') {
-                        resDiv.innerHTML += '- not answered'
+                        resDiv.innerHTML += '- няма адказу'
                         resDiv.classList.add('bg-danger')
                     }
                     else {
@@ -124,12 +124,12 @@ const sendData = () => {
                         const correct = resp['correct_answer']
 
                         if (answer == correct) {
-                            resDiv.classList.add('bg-success')
-                            resDiv.innerHTML += ` answered: ${answer}`
+                            resDiv.classList.add('bg-warning')
+                            resDiv.innerHTML += ` адказ: ${answer}`
                         } else {
                             resDiv.classList.add('bg-danger')
-                            resDiv.innerHTML += ` | correct answer: ${correct}`
-                            resDiv.innerHTML += ` | answered: ${answer}`
+                            resDiv.innerHTML += ` | Правiльны адказ: ${correct}`
+                            resDiv.innerHTML += ` | Ваш адказ: ${answer}`
                         }
                     }
                 }
