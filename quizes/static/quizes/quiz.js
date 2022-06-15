@@ -14,7 +14,7 @@ const activateTimer = (time) => {
         timerBox.innerHTML = `<b>${time}:00</b>`
     }
 
-    let minutes = time - 1
+    let minutes = time -
     let seconds = 60
     let displaySeconds
     let displayMinutes
